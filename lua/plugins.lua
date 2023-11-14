@@ -20,6 +20,15 @@ vim.opt.rtp:prepend(lazypath)
 -- Plugins table
 local plugins = {
 
+    -- Plugin for operations on braces
+    'tpope/vim-surround',
+
+    -- Autosave
+    'Pocco81/auto-save.nvim',
+
+    -- Nice plugin to view CSV files
+    'mechatroner/rainbow_csv',
+
     {
         -- Monokai pro theme
         "loctvl842/monokai-pro.nvim",
@@ -59,10 +68,6 @@ local plugins = {
         end,
     },
 
-
-    -- Utility plugins
-    'tpope/vim-surround',
-
     {
         -- Tresitter for parsing files
         "nvim-treesitter/nvim-treesitter",
@@ -92,12 +97,6 @@ local plugins = {
         end,
     },
 
-    -- Autosave
-    'Pocco81/auto-save.nvim',
-
-    -- Nice plugin to view CSV files
-    'mechatroner/rainbow_csv',
-
     {
         -- Telescope for searching files
         'nvim-telescope/telescope.nvim',
@@ -106,25 +105,18 @@ local plugins = {
             'nvim-treesitter/nvim-treesitter',
         },
         config = function()
-
             -- Config from https://mischavandenburg.com/zet/neovim-telescope-follow-symlinks/
-
             local telescope = require("telescope")
             local telescopeConfig = require("telescope.config")
-
             -- Clone the default Telescope configuration
             local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
-
             -- I want to search in hidden/dot files.
             table.insert(vimgrep_arguments, "--hidden")
-
             -- I don't want to search in the `.git` directory.
             table.insert(vimgrep_arguments, "--glob")
             table.insert(vimgrep_arguments, "!**/.git/*")
-
             -- I want to follow symbolic links
             table.insert(vimgrep_arguments, "-L")
-
             -- Run the setup function
             telescope.setup({
                 defaults = {
