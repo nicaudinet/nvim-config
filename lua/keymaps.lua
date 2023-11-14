@@ -56,11 +56,8 @@ vim.keymap.set('n', '<Leader>fk', telescope.keymaps, opts)
 -- Git --
 ---------
 
--- Open git menu from fugitive
-vim.keymap.set('n', '<Leader>g', ':Git<CR>', opts)
-
 -- Open git menu from lazygit
-vim.keymap.set('n', '<Leader>G', ':LazyGit<CR>', opts)
+vim.keymap.set('n', '<Leader>g', ':LazyGit<CR>', opts)
 
 ----------------------
 -- Editing Key Maps --

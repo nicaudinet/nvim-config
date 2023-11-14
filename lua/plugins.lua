@@ -30,12 +30,8 @@ local plugins = {
         end,
     },
 
-    -- Git plugins
-    'tpope/vim-fugitive', -- Nice git commands
-    'lewis6991/gitsigns.nvim', -- Git decorations
-
     {
-        -- LazyGit floating terminal
+        -- LazyGit for Git operations
         "kdheepak/lazygit.nvim",
         -- optional for floating window border decoration
         dependencies = { "nvim-lua/plenary.nvim", },
@@ -54,6 +50,15 @@ local plugins = {
             vim.g.lazygit_use_custom_config_file_path = 0
         end,
     },
+
+    {
+        -- Git decorations in the buffer
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end,
+    },
+
 
     -- Utility plugins
     'tpope/vim-surround',
