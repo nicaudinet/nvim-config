@@ -115,6 +115,9 @@ local plugins = {
             -- I don't want to search in the `.git` directory.
             table.insert(vimgrep_arguments, "--glob")
             table.insert(vimgrep_arguments, "!**/.git/*")
+            -- I don't want to search in the `.venv` directory.
+            table.insert(vimgrep_arguments, "--glob")
+            table.insert(vimgrep_arguments, "!**/.venv/*")
             -- I want to follow symbolic links
             table.insert(vimgrep_arguments, "-L")
             -- Run the setup function
@@ -126,7 +129,12 @@ local plugins = {
                 pickers = {
                     find_files = {
                         -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-                        find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*", "-L" },
+                        find_command = {
+                            "rg", "--files", "--hidden",
+                            "--glob", "!**/.git/*",
+                            "-L",
+                            "--glob", "!**/.venv/*",
+                        },
                     },
                 },
             })
