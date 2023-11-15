@@ -78,6 +78,8 @@ vim.keymap.set('n', '<Leader>kv', 'ivim.keymap.set(\'v\', \'\', \'\', opts)<Esc>
 
 -- Open plugin file
 vim.keymap.set('n', '<Leader>po', ':e ~/.config/nvim/lua/plugins.lua<CR>', opts)
+-- Open the lazy.nvim menu 
+vim.keymap.set('n', '<Leader>pl', ':Lazy<CR>', opts)
 
 ---------------
 -- Nvim Tree --
