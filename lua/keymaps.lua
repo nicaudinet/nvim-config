@@ -60,21 +60,15 @@ vim.keymap.set('n', '<Leader>fk', telescope.keymaps, opts)
 vim.keymap.set('n', '<Leader>g', ':LazyGit<CR>', opts)
 
 ----------------------
--- Editing Key Maps --
+-- Editing Settings --
 ----------------------
 
 -- Open keymap file
 vim.keymap.set('n', '<Leader>ko', ':e ~/.config/nvim/lua/keymaps.lua<CR>', opts) -- Open keymappfing
-
 -- Add key mapping for normal mode
 vim.keymap.set('n', '<Leader>kn', 'ivim.keymap.set(\'n\', \'\', \'\', opts)<Esc>Fn2f\'a')
-
 -- Add key mapping for normal mode
 vim.keymap.set('n', '<Leader>kv', 'ivim.keymap.set(\'v\', \'\', \'\', opts)<Esc>Fn2f\'a')
-
----------------------
--- Editing Plugins --
----------------------
 
 -- Open plugin file
 vim.keymap.set('n', '<Leader>po', ':e ~/.config/nvim/lua/plugins.lua<CR>', opts)
@@ -94,6 +88,7 @@ vim.keymap.set('n', '<Leader>t', ':NvimTreeToggle<CR>', opts)
 -- Terminal --
 --------------
 
+-- Open terminal to the right
 vim.keymap.set('n', '<Leader>T', ':vsplit term://fish<CR>A', opts)
 
 -----------------
@@ -109,6 +104,7 @@ vim.keymap.set('n', '<Leader>rc', ':RunClose<CR>', opts)
 -- Ollama --
 ------------
 
+-- Ask prompt to default model
 vim.keymap.set('n', '<Leader>ai', ':Ollama<CR>', opts)
 
 ---------
