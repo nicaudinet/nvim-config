@@ -144,6 +144,21 @@ local plugins = {
         end,
     },
 
+    {
+        -- Code runner
+        'CRAG666/code_runner.nvim',
+        config = function()
+            local window_size = vim.api.nvim_win_get_width(0)
+            require('code_runner').setup({
+                focus = false,
+                term = {
+                    position = "vert",
+                    size = window_size / 2,
+                },
+            })
+        end,
+    },
+
 }
 
 -- Options table
