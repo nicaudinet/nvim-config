@@ -96,7 +96,7 @@ vim.keymap.set('n', '<Leader>T', ':vsplit term://fish<CR>A', opts)
 -----------------
 
 -- Run current file
-vim.keymap.set('n', '<Leader>rf', ':RunFile<CR>', opts)
+vim.keymap.set('n', '<Leader>rf', ':w<CR> :RunFile<CR>', opts)
 -- Close runner window
 vim.keymap.set('n', '<Leader>rc', ':RunClose<CR>', opts)
 
