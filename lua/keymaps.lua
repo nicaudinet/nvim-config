@@ -10,9 +10,6 @@ local opts = {
 -- Normal Mode --
 -----------------
 
--- Set leader key
-vim.g.mapleader = ' '
-
 -- Check health
 vim.keymap.set('n', '<Leader>ch', ':checkhealth<CR>', opts)
 
