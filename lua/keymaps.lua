@@ -24,6 +24,12 @@ vim.keymap.set('n', '<Leader>be', ':e ', opts)
 vim.keymap.set('n', '<Leader>bd', ':bd<CR>', opts)
 vim.keymap.set('n', '<Leader>bb', ':buffers<CR>', opts)
 
+--------------
+-- Comments --
+--------------
+
+-- Defined in the Comment plugin options in the plugin file 
+
 ---------------
 -- Telescope --
 ---------------

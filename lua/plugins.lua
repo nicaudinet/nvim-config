@@ -177,6 +177,29 @@ local plugins = {
         end,
     },
 
+    {
+        -- Comments
+        'numToStr/Comment.nvim',
+        lazy = false,
+        config = function()
+            require('Comment').setup({
+                toggler = {
+                    line = '<Leader>cc',
+                    block = '<Leader>bc',
+                },
+                opleader = {
+                    line = "<Leader>c",
+                    block = "<Leaderb",
+                },
+                extra = {
+                    above = '<Leader>cO',
+                    below = '<Leader>co',
+                    eol = '<Leader>cA',
+                },
+            })
+        end,
+    },
+
 }
 
 -- Options table
