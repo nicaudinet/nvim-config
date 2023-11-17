@@ -20,6 +20,9 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.colorcolumn = "80"
 
+-- Scroll options
+vim.opt.scrolloff = 8
+
 -- Search options
 vim.opt.incsearch = true
 vim.opt.hlsearch = true

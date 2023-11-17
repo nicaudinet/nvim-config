@@ -13,10 +13,35 @@ local opts = {
 -- Check health
 vim.keymap.set('n', '<Leader>ch', ':checkhealth<CR>', opts)
 
--- Window options
+-------------
+-- Windows --
+-------------
+
+-- Set main window shortcut
 vim.keymap.set('n', '<Leader>w', '<C-w>', opts)
--- Use <C-\><C-n> before <C-w> so that window commands also work from the terminal
+-- Use <C-\><C-n> before <C-w> so that window commands also work from terminal
 vim.keymap.set('t', '<Leader>w', '<C-\\><C-n><C-w>', opts)
+
+---------------
+-- Scrolling --
+---------------
+
+-- Scroll up
+vim.keymap.set('n', '<C-k>', '<C-u>zz', opts)
+-- Scroll down
+vim.keymap.set('n', '<C-j>', '<C-d>zz', opts)
+
+-- Set mapping functions for neoscroller
+-- Syntax: t[keys] = {function, {function arguments}}
+local mappings = {}
+mappings['<C-k>'] = {'scroll', {'-vim.wo.scroll', 'true', '100'}}
+mappings['<C-j>'] = {'scroll', { 'vim.wo.scroll', 'true', '100'}}
+mappings['<C-y>'] = {'scroll', {'-0.10', 'false', '50'}}
+mappings['<C-e>'] = {'scroll', { '0.10', 'false', '50'}}
+mappings['zt'] = {'zt', {'100'}}
+mappings['zz'] = {'zz', {'100'}}
+mappings['zb'] = {'zb', {'100'}}
+require('neoscroll.config').set_mappings(mappings)
 
 -------------
 -- Buffers --
