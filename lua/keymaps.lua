@@ -18,16 +18,26 @@ vim.keymap.set('n', '<Leader>w', '<C-w>', opts)
 -- Use <C-\><C-n> before <C-w> so that window commands also work from the terminal
 vim.keymap.set('t', '<Leader>w', '<C-\\><C-n><C-w>', opts)
 
--- Buffer options
+-------------
+-- Buffers --
+-------------
+
+-- Create a new buffer
 vim.keymap.set('n', '<Leader>bn', ':enew<CR>', opts)
+-- Edit a file
 vim.keymap.set('n', '<Leader>be', ':e ', opts)
+-- Close a buffer
 vim.keymap.set('n', '<Leader>bd', ':bd<CR>', opts)
+-- Show open buffers
 vim.keymap.set('n', '<Leader>bb', ':buffers<CR>', opts)
+-- Next buffer
+vim.keymap.set('n', '<Leader><Tab>', ':bnext<CR>', opts)
+-- Previous buffer
+vim.keymap.set('n', '<Leader><S-Tab>', ':bprev<CR>', opts)
 
 --------------
 -- Comments --
 --------------
-
 -- Defined in the Comment plugin options in the plugin file 
 
 ---------------
