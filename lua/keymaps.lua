@@ -91,6 +91,9 @@ vim.keymap.set('n', '<Leader>pl', ':Lazy<CR>', opts)
 -- Open options file
 vim.keymap.set('n', '<Leader>oo', ':e ~/.config/nvim/lua/options.lua<CR>', opts)
 
+-- Open init file
+vim.keymap.set('n', '<Leader>oi', ':e ~/.config/nvim/init.lua<CR>', opts)
+
 ---------------
 -- Nvim Tree --
 ---------------
