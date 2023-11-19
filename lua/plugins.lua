@@ -212,7 +212,16 @@ local plugins = {
         -- Dressing - nice input and select using telescope
         'stevearc/dressing.nvim',
         event = 'VeryLazy',
-    }
+    },
+
+    {
+        -- Mason for LSP and formatter management
+        "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup()
+        end,
+    },
+
 
 }
 

@@ -156,3 +156,10 @@ vim.keymap.set('n', '<Leader>ai', ':Ollama<CR>', opts)
 vim.keymap.set('n', '<Leader>ll', ':VimtexCompileSS<CR>', opts)
 -- Toggle continuous compilation 
 vim.keymap.set('n', '<Leader>ls', ':VimtexCompile<CR>', opts)
+-----------
+-- Mason --
+-----------
+
+-- Open Mason (stands for leader-plugin-mason)
+vim.keymap.set("n", "<Leader>pm", ":Mason<CR>", opts)
+
