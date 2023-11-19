@@ -3,7 +3,7 @@
 -- Use :h <option_name> for information about options
 
 --  Mouse options
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Tab options
 tabsize = 4
