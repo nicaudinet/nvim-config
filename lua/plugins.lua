@@ -24,7 +24,7 @@ local plugins = {
     'tpope/vim-surround',
 
     -- Autosave
-    'Pocco81/auto-save.nvim',
+    -- 'Pocco81/auto-save.nvim',
 
     -- Nice plugin to view CSV files
     'mechatroner/rainbow_csv',
