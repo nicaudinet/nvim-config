@@ -206,7 +206,13 @@ local plugins = {
         config = function ()
             require('neoscroll').setup()
         end
-},
+    },
+
+    {
+        -- Dressing - nice input and select using telescope
+        'stevearc/dressing.nvim',
+        event = 'VeryLazy',
+    }
 
 }
 
