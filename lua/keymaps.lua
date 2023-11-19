@@ -163,3 +163,18 @@ vim.keymap.set('n', '<Leader>ls', ':VimtexCompile<CR>', opts)
 -- Open Mason (stands for leader-plugin-mason)
 vim.keymap.set("n", "<Leader>pm", ":Mason<CR>", opts)
 
+----------------
+-- Formatting --
+----------------
+
+function format_file()
+	require("conform").format({
+		format_on_save = {
+			lsp_fallback = true,
+			async = false,
+			timeout_ms = 500,
+		},
+	})
+end
+
+vim.keymap.set("n", "<Leader>F", format_file, opts)
