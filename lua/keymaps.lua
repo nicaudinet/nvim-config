@@ -149,13 +149,13 @@ vim.keymap.set("n", "<Leader>rc", ":RunClose<CR>", opts)
 vim.keymap.set("n", "<Leader>ai", ":Ollama<CR>", opts)
 
 ---------
--- TeX --
+-- LaTeX --
 ---------
 
 -- Single-shot compilation
-vim.keymap.set("n", "<Leader>ll", ":VimtexCompileSS<CR>", opts)
+vim.keymap.set("n", "<Leader>ll", ":w<CR>:VimtexCompileSS<CR>", opts)
 -- Toggle continuous compilation
-vim.keymap.set("n", "<Leader>ls", ":VimtexCompile<CR>", opts)
+vim.keymap.set("n", "<Leader>ls", ":w<CR>:VimtexCompile<CR>", opts)
 
 -----------
 -- Mason --
