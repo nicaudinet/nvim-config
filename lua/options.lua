@@ -25,7 +25,7 @@ vim.opt.scrolloff = 8
 
 -- Search options
 vim.opt.incsearch = true
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
