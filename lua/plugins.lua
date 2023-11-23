@@ -234,6 +234,7 @@ local plugins = {
         formatters_by_ft = {
           python = { "isort", "black" },
           lua = { "stylua" },
+          htmldjango = { "djlint" },
         },
         format_on_save = {
           lsp_fallback = true,
