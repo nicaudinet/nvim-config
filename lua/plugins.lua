@@ -233,6 +233,9 @@ local plugins = {
     end,
   },
 
+  -- Neovim LSP
+  "neovim/nvim-lspconfig",
+
   {
     -- Conform for formatting
     "stevearc/conform.nvim",
