@@ -18,7 +18,10 @@ vim.opt.relativenumber = true
 vim.opt.showmode = false
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+-- Text width
 vim.opt.colorcolumn = "80"
+vim.opt.textwidth = 80
 
 -- Scroll options
 vim.opt.scrolloff = 8
