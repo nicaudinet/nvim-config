@@ -74,19 +74,14 @@ local telescope = require("telescope.builtin")
 -- Open find menu
 vim.keymap.set("n", ";", telescope.find_files, opts)
 vim.keymap.set("n", "<Leader>ff", telescope.find_files, opts)
-
 -- Search through directory (ripgrep)
 vim.keymap.set("n", "<Leader>fg", telescope.live_grep, opts)
-
 -- Search through buffers
 vim.keymap.set("n", "<Leader>fb", telescope.buffers, opts)
-
 -- Search through registers
 vim.keymap.set("n", "<Leader>fr", telescope.registers, opts)
-
 -- Search through help tags
 vim.keymap.set("n", "<Leader>fh", telescope.help_tags, opts)
-
 -- Search through key maps
 vim.keymap.set("n", "<Leader>fk", telescope.keymaps, opts)
 

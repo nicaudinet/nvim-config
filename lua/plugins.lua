@@ -226,6 +226,14 @@ local plugins = {
   },
 
   {
+    -- Bridge between Mason and neovim's lspconfig
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason").setup({ ensure_installed = { "pyright", "haskell-language-server" } })
+    end,
+  },
+
+  {
     -- Conform for formatting
     "stevearc/conform.nvim",
     event = { "BufReadPre", "BufNewFile" },
