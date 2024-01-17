@@ -60,11 +60,6 @@ vim.keymap.set("n", "<Leader><Tab>", ":bnext<CR>", opts)
 -- Previous buffer
 vim.keymap.set("n", "<Leader><S-Tab>", ":bprev<CR>", opts)
 
---------------
--- Comments --
---------------
--- Defined in the Comment plugin options in the plugin file
-
 ---------------
 -- Telescope --
 ---------------
@@ -174,3 +169,13 @@ function format_file()
 end
 
 vim.keymap.set("n", "<Leader>F", format_file, opts)
+
+--------------
+-- Comments --
+--------------
+-- Defined in the Comment plugin options
+
+-----------------
+-- Tree-sitter --
+-----------------
+-- Defined in the Tree-sitter plugin options

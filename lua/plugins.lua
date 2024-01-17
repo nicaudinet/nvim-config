@@ -71,6 +71,38 @@ local plugins = {
     -- Tresitter for parsing files
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      local treesitter = require("nvim-treesitter.configs")
+      treesitter.setup({
+        highlight = {
+          enable = true,
+        },
+        indent = {
+          enable = true,
+        },
+        ensure_installed = {
+          "haskell",
+          "python",
+          "json",
+          "yaml",
+          "lua",
+          "html",
+          "css",
+          "markdown",
+          "gitignore",
+        },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "<C-s>",
+            node_incremental = "<C-s>",
+            scope_incremental = false,
+            node_decremental = "<bs>",
+          },
+        },
+      })
+    end,
   },
 
   {
