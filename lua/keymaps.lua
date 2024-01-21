@@ -101,13 +101,6 @@ vim.keymap.set("n", "<Leader>fh", telescope.help_tags, opts)
 -- Search through key maps
 vim.keymap.set("n", "<Leader>fk", telescope.keymaps, opts)
 
----------
--- Git --
----------
-
--- Open git menu from lazygit
-vim.keymap.set("n", "<Leader>g", ":LazyGit<CR>", opts)
-
 ---------------
 -- Nvim Tree --
 ---------------
