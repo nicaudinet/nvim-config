@@ -6,6 +6,27 @@ local opts = {
   silent = true, -- do not show message
 }
 
+----------------------
+-- Editing Settings --
+----------------------
+
+-- Open keymap file (leader-open-keymaps)
+vim.keymap.set("n", "<Leader>ok", ":e ~/.config/nvim/lua/keymaps.lua<CR>", opts)
+-- Add key mapping for normal mode
+vim.keymap.set("n", "<Leader>kn", "ivim.keymap.set('n', '', '', opts)<Esc>Fn2f'a")
+-- Add key mapping for visual mode
+vim.keymap.set("n", "<Leader>kv", "ivim.keymap.set('v', '', '', opts)<Esc>Fn2f'a")
+-- Open plugin file (leader-open-plugins)
+vim.keymap.set("n", "<Leader>op", ":e ~/.config/nvim/lua/plugins.lua<CR>", opts)
+-- Open the lazy.nvim menu (leader-open-lazy.nvim)
+vim.keymap.set("n", "<Leader>oL", ":Lazy<CR>", opts)
+-- Open options file (leader-open-options)
+vim.keymap.set("n", "<Leader>oo", ":e ~/.config/nvim/lua/options.lua<CR>", opts)
+-- Open init file (leader-open-init)
+vim.keymap.set("n", "<Leader>oi", ":e ~/.config/nvim/init.lua<CR>", opts)
+-- Open LSP file (leader-open-lsp)
+vim.keymap.set("n", "<Leader>ol", ":e ~/.config/nvim/lua/lsp.lua<CR>", opts)
+
 -----------------
 -- Normal Mode --
 -----------------
@@ -86,28 +107,6 @@ vim.keymap.set("n", "<Leader>fk", telescope.keymaps, opts)
 
 -- Open git menu from lazygit
 vim.keymap.set("n", "<Leader>g", ":LazyGit<CR>", opts)
-
-----------------------
--- Editing Settings --
-----------------------
-
--- Open keymap file
-vim.keymap.set("n", "<Leader>ko", ":e ~/.config/nvim/lua/keymaps.lua<CR>", opts) -- Open keymappfing
--- Add key mapping for normal mode
-vim.keymap.set("n", "<Leader>kn", "ivim.keymap.set('n', '', '', opts)<Esc>Fn2f'a")
--- Add key mapping for normal mode
-vim.keymap.set("n", "<Leader>kv", "ivim.keymap.set('v', '', '', opts)<Esc>Fn2f'a")
-
--- Open plugin file
-vim.keymap.set("n", "<Leader>po", ":e ~/.config/nvim/lua/plugins.lua<CR>", opts)
--- Open the lazy.nvim menu
-vim.keymap.set("n", "<Leader>pl", ":Lazy<CR>", opts)
-
--- Open options file
-vim.keymap.set("n", "<Leader>oo", ":e ~/.config/nvim/lua/options.lua<CR>", opts)
-
--- Open init file
-vim.keymap.set("n", "<Leader>oi", ":e ~/.config/nvim/init.lua<CR>", opts)
 
 ---------------
 -- Nvim Tree --
