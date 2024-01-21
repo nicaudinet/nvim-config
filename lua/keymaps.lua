@@ -169,6 +169,15 @@ end
 
 vim.keymap.set("n", "<Leader>F", format_file, opts)
 
+--------------------
+-- vim.diagnostic --
+--------------------
+
+-- Go to next warning / error (leader-goto-next)
+vim.keymap.set("n", "<Leader>gn", vim.diagnostic.goto_next, opts)
+-- Go to next warning / error (leader-goto-previous)
+vim.keymap.set("n", "<Leader>gp", vim.diagnostic.goto_prev, opts)
+
 --------------
 -- Comments --
 --------------
