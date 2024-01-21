@@ -287,6 +287,11 @@ local plugins = {
       })
     end,
   },
+
+  -- Github Copilot
+  {
+    "github/copilot.vim",
+  },
 }
 
 -- Options table
