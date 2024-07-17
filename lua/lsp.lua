@@ -1,6 +1,18 @@
 local lspconfig = require("lspconfig")
 -- Python
 lspconfig.pyright.setup({})
+
+-- Purescript
+lspconfig.purescriptls.setup({
+  filetypes = { "purescript" },
+  settings = {
+    purescript = {
+      addSpagoSources = true, -- e.g. any purescript language-server config here
+    },
+  },
+  flags = {
+    debounce_text_changes = 150,
+  },
 })
 
 -- Recommended settings from https://github.com/neovim/nvim-lspconfig
