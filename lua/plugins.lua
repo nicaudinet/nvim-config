@@ -51,6 +51,9 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
     config = function()
       local treesitter = require("nvim-treesitter.configs")
       treesitter.setup({
@@ -62,6 +65,7 @@ local plugins = {
         },
         ensure_installed = {
           "haskell",
+          "purescript",
           "python",
           "json",
           "yaml",
@@ -78,6 +82,50 @@ local plugins = {
             node_incremental = "<C-s>",
             scope_incremental = false,
             node_decremental = "<bs>",
+          },
+        },
+      })
+    end,
+  },
+
+  {
+    -- Treesitter text objects
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    lazy = true,
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        textobjects = {
+          select = {
+            enable = true,
+            lookahead = true,
+            keymaps = {
+              ["af"] = "@function.outer",
+              ["if"] = "@function.inner",
+              ["ac"] = "@class.outer",
+              ["ic"] = "@class.inner",
+              ["a="] = "@assignment.outer",
+              ["i="] = "@assignment.inner",
+              ["l="] = "@assignment.lhs",
+              ["r="] = "@assignment.rhs",
+              ["al"] = "@loop.outer",
+              ["il"] = "@loop.inner",
+            },
+          },
+          move = {
+            enable = true,
+            set_jumps = true,
+            goto_next_start = {
+              ["]f"] = "@function.outer",
+            },
+            goto_next_end = {
+              ["]F"] = "@function.outer",
+            },
+            goto_previous_start = {
+              ["[f"] = "@function.outer",
+            },
+            goto_previous_end = {
+              ["[F"] = "@function.outer",
+            },
           },
         },
       })
@@ -215,14 +263,6 @@ local plugins = {
   },
 
   {
-    -- Neoscroller for smooth scrolling
-    "karb94/neoscroll.nvim",
-    config = function()
-      require("neoscroll").setup()
-    end,
-  },
-
-  {
     -- Dressing - nice input and select using telescope
     "stevearc/dressing.nvim",
     event = "VeryLazy",
@@ -240,11 +280,18 @@ local plugins = {
     -- Bridge between Mason and neovim's lspconfig
     "williamboman/mason-lspconfig.nvim",
     config = function()
-      require("mason").setup({ ensure_installed = { "pyright", "haskell-language-server" } })
+      require("mason").setup({
+        ensure_installed = {
+          "pyright",
+          "haskell-language-server",
+          "lua-language-server",
+          "purescript-language-server",
+        },
+      })
     end,
   },
 
-  -- Neovim LSP
+  -- Neovim LSP (configured in lsp.lua)
   "neovim/nvim-lspconfig",
 
   {
@@ -256,7 +303,7 @@ local plugins = {
         formatters_by_ft = {
           python = { "isort", "black" },
           lua = { "stylua" },
-          htmldjango = { "djlint" },
+          javascript = { "prettier" },
         },
         format_on_save = {
           lsp_fallback = true,
@@ -267,10 +314,13 @@ local plugins = {
     end,
   },
 
-  -- Github Copilot
   {
+    -- Github Copilot
     "github/copilot.vim",
   },
+
+  -- Purescript syntac highlighting
+  { "purescript-contrib/purescript-vim" },
 }
 
 -- Options table

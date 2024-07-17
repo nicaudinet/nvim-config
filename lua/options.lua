@@ -5,13 +5,6 @@
 --  Mouse options
 vim.opt.mouse = "a"
 
--- Tab options
-tabsize = 4
-vim.opt.tabstop = tabsize
-vim.opt.softtabstop = tabsize
-vim.opt.shiftwidth = tabsize
-vim.opt.expandtab = true
-
 -- UI options
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -24,7 +17,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.textwidth = 80
 
 -- Scroll options
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 2
 
 -- Search options
 vim.opt.incsearch = true
@@ -40,3 +33,10 @@ vim.g.markdown_folding = 1
 
 -- Filetype detection
 vim.opt.filetype = "on"
+
+-- Tab options
+local tabsize = 4
+vim.opt.tabstop = tabsize
+vim.opt.softtabstop = tabsize
+vim.opt.shiftwidth = tabsize
+vim.opt.expandtab = true
