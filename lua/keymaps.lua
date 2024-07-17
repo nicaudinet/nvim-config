@@ -180,3 +180,15 @@ vim.keymap.set("n", "<Leader>gp", vim.diagnostic.goto_prev, opts)
 -- Tree-sitter --
 -----------------
 -- Defined in the Tree-sitter plugin options
+
+-----------------
+-- Copilot --
+-----------------
+
+-- Accept copilot suggestion (leader-copilot)
+vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
+  replace_keycodes = false,
+  expr = true,
+})
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
