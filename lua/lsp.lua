@@ -1,9 +1,6 @@
 local lspconfig = require("lspconfig")
 -- Python
 lspconfig.pyright.setup({})
--- Haskell
-lspconfig.hls.setup({
-  filetypes = { "haskell", "lhaskell", "cabal" },
 })
 
 -- Recommended settings from https://github.com/neovim/nvim-lspconfig
