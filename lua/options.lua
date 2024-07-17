@@ -34,3 +34,9 @@ vim.opt.smartcase = true
 
 -- NvimTree options
 vim.opt.termguicolors = true -- set termguicolors to enable highlight groups
+
+-- Folding markdown
+vim.g.markdown_folding = 1
+
+-- Filetype detection
+vim.opt.filetype = "on"
