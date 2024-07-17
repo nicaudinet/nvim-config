@@ -143,8 +143,8 @@ vim.keymap.set("n", "<Leader>ls", ":w<CR>:VimtexCompile<CR>", opts)
 -- Mason --
 -----------
 
--- Open Mason (stands for leader-plugin-mason)
-vim.keymap.set("n", "<Leader>pm", ":Mason<CR>", opts)
+-- Open Mason (stands for leader-open-Mason)
+vim.keymap.set("n", "<Leader>oM", ":Mason<CR>", opts)
 
 ----------------
 -- Formatting --
