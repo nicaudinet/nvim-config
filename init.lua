@@ -11,6 +11,6 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 require("plugins") -- Plugin options (run before keymaps)
+require("lsp") -- LSP options
 require("options") -- Global options
 require("keymaps") -- Keymap options
-require("lsp") -- LSP options
