@@ -52,18 +52,6 @@ vim.keymap.set("n", "<C-k>", "<C-u>zz", opts)
 -- Scroll down
 vim.keymap.set("n", "<C-j>", "<C-d>zz", opts)
 
--- Set mapping functions for neoscroller
--- Syntax: t[keys] = {function, {function arguments}}
-local mappings = {}
-mappings["<C-k>"] = { "scroll", { "-vim.wo.scroll", "true", "100" } }
-mappings["<C-j>"] = { "scroll", { "vim.wo.scroll", "true", "100" } }
-mappings["<C-y>"] = { "scroll", { "-0.10", "false", "50" } }
-mappings["<C-e>"] = { "scroll", { "0.10", "false", "50" } }
-mappings["zt"] = { "zt", { "100" } }
-mappings["zz"] = { "zz", { "100" } }
-mappings["zb"] = { "zb", { "100" } }
-require("neoscroll.config").set_mappings(mappings)
-
 -------------
 -- Buffers --
 -------------
