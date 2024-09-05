@@ -28,9 +28,6 @@ vim.opt.smartcase = true
 -- NvimTree options
 vim.opt.termguicolors = true -- set termguicolors to enable highlight groups
 
--- Folding markdown
-vim.g.markdown_folding = 1
-
 -- Filetype detection
 vim.opt.filetype = "on"
 
@@ -40,3 +37,14 @@ vim.opt.tabstop = tabsize
 vim.opt.softtabstop = tabsize
 vim.opt.shiftwidth = tabsize
 vim.opt.expandtab = true
+
+-- Use treesitter for folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+-- Start files unfolded
+vim.opt.foldlevel = 10
+vim.opt.foldlevelstart = 10
+
+-- Only nest up to 4 folds deep
+vim.opt.foldnestmax = 4
