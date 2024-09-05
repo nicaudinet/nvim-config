@@ -22,6 +22,20 @@ local plugins = {
   -- Plugin for operations on braces
   "tpope/vim-surround",
 
+  -- Plugin for installing LSP servers and other tools
+  { "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup({
+        ui = {
+					icons = {
+						package_installed = "✓",
+						package_pending = "➜",
+						package_uninstalled = "✗",
+					}
+        }
+      })
+    end,
+  },
 
   -- Nice plugin to view CSV files
   "mechatroner/rainbow_csv",
