@@ -6,24 +6,31 @@ local opts = {
   silent = true, -- do not show message
 }
 
-----------------------
--- Editing Settings --
-----------------------
+-------------------
+-- Open Settings --
+-------------------
 
--- Open keymap file (leader-open-keymaps)
-vim.keymap.set("n", "<Leader>ok", ":e ~/.config/nvim/lua/keymaps.lua<CR>", opts)
--- Add key mapping for normal mode
-vim.keymap.set("n", "<Leader>kn", "ivim.keymap.set('n', '', '', opts)<Esc>Fn2f'a")
--- Add key mapping for visual mode
-vim.keymap.set("n", "<Leader>kv", "ivim.keymap.set('v', '', '', opts)<Esc>Fn2f'a")
--- Open plugin file (leader-open-plugins)
-vim.keymap.set("n", "<Leader>op", ":e ~/.config/nvim/lua/plugins.lua<CR>", opts)
--- Open the lazy.nvim menu (leader-open-lazy.nvim)
-vim.keymap.set("n", "<Leader>oL", ":Lazy<CR>", opts)
--- Open options file (leader-open-options)
-vim.keymap.set("n", "<Leader>oo", ":e ~/.config/nvim/lua/options.lua<CR>", opts)
 -- Open init file (leader-open-init)
 vim.keymap.set("n", "<Leader>oi", ":e ~/.config/nvim/init.lua<CR>", opts)
+-- Open keymap file (leader-open-keymaps)
+vim.keymap.set("n", "<Leader>ok", ":e ~/.config/nvim/lua/keymaps.lua<CR>", opts)
+-- Open plugin file (leader-open-plugins)
+vim.keymap.set("n", "<Leader>op", ":e ~/.config/nvim/lua/plugins.lua<CR>", opts)
+-- Open options file (leader-open-options)
+vim.keymap.set("n", "<Leader>oo", ":e ~/.config/nvim/lua/options.lua<CR>", opts)
+-- Open the lazy.nvim menu (leader-open-lazy.nvim)
+vim.keymap.set("n", "<Leader>oL", ":Lazy<CR>", opts)
+-- Open Mason (stands for leader-open-Mason)
+vim.keymap.set("n", "<Leader>oM", ":Mason<CR>", opts)
+
+-----------------
+-- Add Keymaps --
+-----------------
+
+-- Add key mapping for normal mode
+vim.keymap.set("n", "<Leader>kn", "ivim.keymap.set(\"n\", \"\", \"\", opts)<Esc>Fn2f\"a")
+-- Add key mapping for visual mode
+vim.keymap.set("n", "<Leader>kv", "ivim.keymap.set('v', '', '', opts)<Esc>Fn2f'a")
 
 -----------------
 -- Normal Mode --
@@ -60,8 +67,8 @@ vim.keymap.set("n", "<Leader>bn", ":enew<CR>", opts)
 vim.keymap.set("n", "<Leader>be", ":e ", opts)
 -- Close a buffer
 vim.keymap.set("n", "<Leader>bd", ":bd<CR>", opts)
--- Show open buffers
-vim.keymap.set("n", "<Leader>bb", ":buffers<CR>", opts)
+-- Close all buffers except the current one
+vim.keymap.set("n", "<Leader>bo", ":BufOnly<CR>", opts)
 -- Next buffer
 vim.keymap.set("n", "<Leader><Tab>", ":bnext<CR>", opts)
 -- Previous buffer
@@ -87,6 +94,7 @@ local telescope = require("telescope.builtin")
 
 -- Open find menu
 vim.keymap.set("n", ";", telescope.find_files, opts)
+-- Find files
 vim.keymap.set("n", "<Leader>ff", telescope.find_files, opts)
 -- Search through directory (ripgrep)
 vim.keymap.set("n", "<Leader>fg", telescope.live_grep, opts)
@@ -99,66 +107,21 @@ vim.keymap.set("n", "<Leader>fh", telescope.help_tags, opts)
 -- Search through key maps
 vim.keymap.set("n", "<Leader>fk", telescope.keymaps, opts)
 
----------------
--- Nvim Tree --
----------------
+----------------------
+-- File navigation  --
+----------------------
 
-vim.keymap.set("n", "<Leader>t", ":NvimTreeToggle<CR>", opts)
+-- Open Oil.nvim in a floating window
+vim.keymap.set("n", "-", ":Oil --float<CR>", opts)
 
---------------
--- Terminal --
---------------
-
--- Open terminal to the right
-vim.keymap.set("n", "<Leader>T", ":vsplit term://fish<CR>A", opts)
-
------------------
--- Code Runner --
------------------
-
--- Run current file
-vim.keymap.set("n", "<Leader>rf", ":w<CR> :RunFile<CR>", opts)
--- Close runner window
-vim.keymap.set("n", "<Leader>rc", ":RunClose<CR>", opts)
-
-------------
--- Ollama --
-------------
-
--- Ask prompt to default model
-vim.keymap.set("n", "<Leader>ai", ":Ollama<CR>", opts)
-
----------
+-----------
 -- LaTeX --
----------
+-----------
 
 -- Single-shot compilation
 vim.keymap.set("n", "<Leader>ll", ":w<CR>:VimtexCompileSS<CR>", opts)
 -- Toggle continuous compilation
 vim.keymap.set("n", "<Leader>ls", ":w<CR>:VimtexCompile<CR>", opts)
-
------------
--- Mason --
------------
-
--- Open Mason (stands for leader-open-Mason)
-vim.keymap.set("n", "<Leader>oM", ":Mason<CR>", opts)
-
-----------------
--- Formatting --
-----------------
-
-function format_file()
-  require("conform").format({
-    format_on_save = {
-      lsp_fallback = true,
-      async = false,
-      timeout_ms = 500,
-    },
-  })
-end
-
-vim.keymap.set("n", "<Leader>F", format_file, opts)
 
 --------------------
 -- vim.diagnostic --
@@ -169,21 +132,21 @@ vim.keymap.set("n", "<Leader>gn", vim.diagnostic.goto_next, opts)
 -- Go to next warning / error (leader-goto-previous)
 vim.keymap.set("n", "<Leader>gp", vim.diagnostic.goto_prev, opts)
 
---------------
--- Comments --
---------------
--- Defined in the Comment plugin options
-
 -----------------
 -- Tree-sitter --
 -----------------
--- Defined in the Tree-sitter plugin options
+-- Other commands defined in the Tree-sitter plugin options
+
+-- Inspect the tree
+vim.keymap.set("n", "<Leader>ti", ":InspectTree<CR>", opts)
+
+-- Edit query
+vim.keymap.set("n", "<Leader>tq", vim.treesitter.query.edit, opts)
 
 -----------------
 -- Copilot --
 -----------------
 
--- Accept copilot suggestion (leader-copilot)
 vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
   replace_keycodes = false,
   expr = true,
