@@ -24,8 +24,6 @@ vim.keymap.set("n", "<Leader>oL", ":Lazy<CR>", opts)
 vim.keymap.set("n", "<Leader>oo", ":e ~/.config/nvim/lua/options.lua<CR>", opts)
 -- Open init file (leader-open-init)
 vim.keymap.set("n", "<Leader>oi", ":e ~/.config/nvim/init.lua<CR>", opts)
--- Open LSP file (leader-open-lsp)
-vim.keymap.set("n", "<Leader>ol", ":e ~/.config/nvim/lua/lsp.lua<CR>", opts)
 
 -----------------
 -- Normal Mode --
