@@ -22,8 +22,6 @@ local plugins = {
   -- Plugin for operations on braces
   "tpope/vim-surround",
 
-  -- Autosave
-  -- 'Pocco81/auto-save.nvim',
 
   -- Nice plugin to view CSV files
   "mechatroner/rainbow_csv",
@@ -47,7 +45,7 @@ local plugins = {
   },
 
   {
-    -- Tresitter for parsing files
+    -- Treesitter for parsing files
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     event = { "BufReadPre", "BufNewFile" },
@@ -73,6 +71,7 @@ local plugins = {
           "html",
           "css",
           "markdown",
+          "markdown_inline",
           "gitignore",
         },
         incremental_selection = {
@@ -142,17 +141,8 @@ local plugins = {
   },
 
   {
-    -- NvimTree file browser
-    "nvim-tree/nvim-tree.lua",
+    'stevearc/oil.nvim',
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("nvim-tree").setup({
-        sort_by = "case_sensitive",
-        view = { width = 30 },
-        renderer = { group_empty = true },
-        filters = { dotfiles = true },
-      })
-    end,
   },
 
   {
@@ -204,17 +194,6 @@ local plugins = {
   },
 
   {
-    -- Ollama integration
-    "nomnivore/ollama.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("ollama").setup({
-        model = "paco",
-      })
-    end,
-  },
-
-  {
     -- LaTeX plugin
     "lervag/vimtex",
     lazy = false, -- lazy-loading will disable inverse search
@@ -225,93 +204,9 @@ local plugins = {
   },
 
   {
-    -- Code runner
-    "CRAG666/code_runner.nvim",
-    config = function()
-      local window_size = vim.api.nvim_win_get_width(0)
-      require("code_runner").setup({
-        focus = false,
-        term = {
-          position = "vert",
-          size = window_size / 2,
-        },
-      })
-    end,
-  },
-
-  {
-    -- Comments
-    "numToStr/Comment.nvim",
-    lazy = false,
-    config = function()
-      require("Comment").setup({
-        toggler = {
-          line = "<Leader>cc",
-          block = "<Leader>bc",
-        },
-        opleader = {
-          line = "<Leader>c",
-          block = "<Leaderb",
-        },
-        extra = {
-          above = "<Leader>cO",
-          below = "<Leader>co",
-          eol = "<Leader>cA",
-        },
-      })
-    end,
-  },
-
-  {
     -- Dressing - nice input and select using telescope
     "stevearc/dressing.nvim",
     event = "VeryLazy",
-  },
-
-  {
-    -- Mason for LSP and formatter management
-    "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
-  },
-
-  {
-    -- Bridge between Mason and neovim's lspconfig
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason").setup({
-        ensure_installed = {
-          "pyright",
-          "haskell-language-server",
-          "lua-language-server",
-          "purescript-language-server",
-        },
-      })
-    end,
-  },
-
-  -- Neovim LSP (configured in lsp.lua)
-  "neovim/nvim-lspconfig",
-
-  {
-    -- Conform for formatting
-    "stevearc/conform.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      require("conform").setup({
-        formatters_by_ft = {
-          python = { "isort", "black" },
-          lua = { "stylua" },
-          javascript = { "prettier" },
-        },
-        format_on_save = {
-          lsp_fallback = true,
-          async = false,
-          timeout_ms = 500,
-        },
-      })
-    end,
   },
 
   {
@@ -319,7 +214,7 @@ local plugins = {
     "github/copilot.vim",
   },
 
-  -- Purescript syntac highlighting
+  -- Purescript syntax highlighting
   { "purescript-contrib/purescript-vim" },
 }
 
