@@ -230,6 +230,9 @@ local plugins = {
 
   -- Purescript syntax highlighting
   { "purescript-contrib/purescript-vim" },
+
+  -- Close all buffers except the current one
+  { "schickling/vim-bufonly" },
 }
 
 -- Options table
