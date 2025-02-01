@@ -22,6 +22,23 @@ local plugins = {
   -- Plugin for operations on braces
   "tpope/vim-surround",
 
+
+  -- LSP config (plugin confings in lsp.lua)
+  "neovim/nvim-lspconfig",
+
+  {
+    -- Connect Mason with LspConfig
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "pyright", -- Python
+          "r_language_server", -- R
+        },
+      })
+    end,
+  },
+
   -- Plugin for installing LSP servers and other tools
   { "williamboman/mason.nvim",
     config = function()
@@ -40,13 +57,21 @@ local plugins = {
   -- Nice plugin to view CSV files
   "mechatroner/rainbow_csv",
 
-  {
-    -- Monokai pro theme
-    "loctvl842/monokai-pro.nvim",
-    priority = 1000, -- load before other plugins
+  -- {
+  --   -- Monokai pro theme
+  --   "loctvl842/monokai-pro.nvim",
+  --   priority = 1000, -- load before other plugins
+  --   config = function()
+  --     require("monokai-pro").setup()
+  --     vim.cmd("colorscheme monokai-pro")
+  --   end,
+  -- },
+
+  { "ellisonleao/gruvbox.nvim",
+    priority = 1000,
     config = function()
-      require("monokai-pro").setup()
-      vim.cmd("colorscheme monokai-pro")
+      require("gruvbox").setup()
+      vim.cmd("colorscheme gruvbox")
     end,
   },
 
@@ -87,6 +112,7 @@ local plugins = {
           "markdown",
           "markdown_inline",
           "gitignore",
+          "r",
         },
         incremental_selection = {
           enable = true,
@@ -223,11 +249,6 @@ local plugins = {
     event = "VeryLazy",
   },
 
-  {
-    -- Github Copilot
-    "github/copilot.vim",
-  },
-
   -- Purescript syntax highlighting
   { "purescript-contrib/purescript-vim" },
 
@@ -236,6 +257,10 @@ local plugins = {
 }
 
 -- Options table
-local opts = {}
+local opts = {
+  rocks = {
+    enabled = false,
+  },
+}
 
 require("lazy").setup(plugins, opts)
