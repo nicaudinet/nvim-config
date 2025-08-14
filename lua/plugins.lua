@@ -254,6 +254,23 @@ local plugins = {
 
   -- Close all buffers except the current one
   { "schickling/vim-bufonly" },
+
+  -- Zen mode
+  {
+    "folke/zen-mode.nvim",
+    opts = {
+      window = {
+        backdrop = 1,
+      },
+      on_open = function(window)
+        require("gitsigns").detach()
+        vim.api.nvim_win_set_option(window, "colorcolumn", "")
+      end,
+      on_close = function()
+        require("gitsigns").attach()
+      end,
+    },
+  },
 }
 
 -- Options table
