@@ -22,7 +22,6 @@ local plugins = {
   -- Plugin for operations on braces
   "tpope/vim-surround",
 
-
   -- LSP config (plugin confings in lsp.lua)
   "neovim/nvim-lspconfig",
 
@@ -32,7 +31,7 @@ local plugins = {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "pyright", -- Python
+          "pyright", -- Python LSP and type-checker
           "r_language_server", -- R
         },
       })
@@ -40,7 +39,8 @@ local plugins = {
   },
 
   -- Plugin for installing LSP servers and other tools
-  { "williamboman/mason.nvim",
+  {
+    "williamboman/mason.nvim",
     config = function()
       require("mason").setup({
         ui = {
@@ -67,7 +67,8 @@ local plugins = {
   --   end,
   -- },
 
-  { "ellisonleao/gruvbox.nvim",
+  {
+    "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = function()
       require("gruvbox").setup()
@@ -181,7 +182,8 @@ local plugins = {
   },
 
   {
-    'stevearc/oil.nvim',
+    -- Edit the file system as if it was a normal file
+    "stevearc/oil.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 
