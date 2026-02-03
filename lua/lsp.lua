@@ -32,7 +32,6 @@ local opts = {
 -- Set common key bindings
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
-
     local client = vim.lsp.get_client_by_id(args.data.client_id)
 
     -- Rename a variable (leader-lsp-Rename)
@@ -40,9 +39,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.keymap.set("n", "<Leader>lR", vim.lsp.buf.rename, opts)
     end
 
-    -- Go to definition (leader-lsp-definition)
+    -- Go to definition (leader-lsp-parent)
     if client.supports_method("textDocument/definition") then
-      vim.keymap.set("n", "<Leader>ld", vim.lsp.buf.definition, opts)
+      vim.keymap.set("n", "<Leader>lp", vim.lsp.buf.definition, opts)
     end
 
     -- Go to the type definition (leader-lsp-type)
@@ -55,11 +54,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format, opts)
     end
 
-    -- Code action (leader-lsp-a)
+    -- Code action (leader-lsp-action)
     if client.supports_method("textDocument/codeAction") then
       vim.keymap.set("n", "<Leader>la", vim.lsp.buf.code_action, opts)
     end
 
+    -- Go to definition (leader-lsp-diagnostic)
+    vim.keymap.set("n", "<Leader>ld", vim.diagnostic.open_float, opts)
 
     ---------------
     -- Telescope --
@@ -76,7 +77,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if client.supports_method("textDocument/publishDiagnostics") then
       vim.keymap.set("n", "<Leader>lD", telescope.diagnostics, opts)
     end
-
-
   end,
 })
