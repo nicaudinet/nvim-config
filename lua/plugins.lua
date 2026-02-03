@@ -259,11 +259,20 @@ local plugins = {
         backdrop = 1,
       },
       on_open = function(window)
-        require("gitsigns").detach()
         vim.api.nvim_win_set_option(window, "colorcolumn", "")
+        require("gitsigns").detach()
+        local buffer_number = vim.api.nvim_win_get_buf(window)
+        vim.lsp.inlay_hint.enable(false, { bufnr = buffer_number })
+        vim.diagnostic.enable(false, { bufnr = buffer_number })
       end,
       on_close = function()
         require("gitsigns").attach()
+        for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+          if vim.api.nvim_buf_is_loaded(buf) then
+            vim.lsp.inlay_hint.enable(true, { bufnr = buf })
+            vim.diagnostic.enable(false, { bufnr = buf })
+          end
+        end
       end,
     },
   },
