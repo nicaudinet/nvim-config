@@ -245,12 +245,6 @@ local plugins = {
     end,
   },
 
-  {
-    -- Dressing - nice input and select using telescope
-    "stevearc/dressing.nvim",
-    event = "VeryLazy",
-  },
-
   -- Purescript syntax highlighting
   { "purescript-contrib/purescript-vim" },
 
