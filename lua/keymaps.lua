@@ -30,7 +30,7 @@ vim.keymap.set("n", "<Leader>oM", ":Mason<CR>", opts)
 -----------------
 
 -- Add key mapping for normal mode
-vim.keymap.set("n", "<Leader>kn", "ivim.keymap.set(\"n\", \"\", \"\", opts)<Esc>Fn2f\"a")
+vim.keymap.set("n", "<Leader>kn", 'ivim.keymap.set("n", "", "", opts)<Esc>Fn2f"a')
 -- Add key mapping for visual mode
 vim.keymap.set("n", "<Leader>kv", "ivim.keymap.set('v', '', '', opts)<Esc>Fn2f'a")
 
@@ -125,6 +125,7 @@ vim.keymap.set("n", "<Leader>gp", vim.diagnostic.goto_prev, opts)
 -----------------
 -- Tree-sitter --
 -----------------
+
 -- Other commands defined in the Tree-sitter plugin options
 
 -- Inspect the tree
