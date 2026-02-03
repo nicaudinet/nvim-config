@@ -17,6 +17,8 @@ lspconfig.pyright.setup({
   },
 })
 
+lspconfig.cssls.setup({})
+
 ---------------------
 -- LSP keybindings --
 ---------------------
