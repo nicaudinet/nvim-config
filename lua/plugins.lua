@@ -54,6 +54,28 @@ local plugins = {
     end,
   },
 
+  {
+    --formatting plugin
+    "stevearc/conform.nvim",
+    config = function()
+      require("conform").setup({
+        formatters = {
+          black = {
+            prepend_args = { "--line-length", "80" },
+          },
+        },
+        formatters_by_ft = {
+          python = { "black" },
+          lua = { "stylua" },
+        },
+        format_on_save = {
+          timeout_ms = 2000,
+          lsp_format = "fallback",
+        },
+      })
+    end,
+  },
+
   -- Nice plugin to view CSV files
   "mechatroner/rainbow_csv",
 
