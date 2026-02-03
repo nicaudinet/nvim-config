@@ -76,18 +76,6 @@ vim.keymap.set("n", "<Leader><Tab>", ":bnext<CR>", opts)
 -- Previous buffer
 vim.keymap.set("n", "<Leader><S-Tab>", ":bprev<CR>", opts)
 
---------------------
--- Spell checking --
---------------------
--- Go to the next spelling error (leader-spell-next)
-vim.keymap.set("n", "<Leader>sn", "]s", opts)
--- Go to the previous spelling error (leader-spell-previous)
-vim.keymap.set("n", "<Leader>sp", "[s", opts)
--- Suggest replacements for the current word (leader-spell-suggest)
-vim.keymap.set("n", "<Leader>ss", "z=", opts)
--- Add a word to the internal spell list (leader-spell-add)
-vim.keymap.set("n", "<Leader>sa", "zg]s", opts)
-
 ---------------
 -- Telescope --
 ---------------
