@@ -5,7 +5,17 @@ local lspconfig = require("lspconfig")
 -----------------------------
 
 -- Enable the Python LSP
-lspconfig.pyright.setup({})
+lspconfig.pyright.setup({
+  settings = {
+    python = {
+      analysis = {
+        inlayHints = {
+          functionParameterTypes = false,
+        },
+      },
+    },
+  },
+})
 
 ---------------------
 -- LSP keybindings --
