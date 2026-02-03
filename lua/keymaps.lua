@@ -133,18 +133,9 @@ vim.keymap.set("n", "<Leader>ti", ":InspectTree<CR>", opts)
 -- Edit query
 vim.keymap.set("n", "<Leader>tq", vim.treesitter.query.edit, opts)
 
------------------
--- Copilot --
------------------
 --------------
 -- Zen Mode --
 --------------
 
-vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
-  replace_keycodes = false,
-  expr = true,
-})
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_assume_mapped = true
 zenmode = require("zen-mode")
 vim.keymap.set("n", "<Leader>Z", zenmode.toggle, opts)
