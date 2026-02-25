@@ -31,7 +31,7 @@ local plugins = {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "pyright", -- Python LSP and type-checker
+          "pyrefly", -- Python LSP and type-checker
           "r_language_server", -- R
         },
       })

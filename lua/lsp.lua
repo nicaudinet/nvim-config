@@ -1,23 +1,9 @@
-local lspconfig = require("lspconfig")
-
 -----------------------------
 -- Enable Language Servers --
 -----------------------------
 
--- Enable the Python LSP
-lspconfig.pyright.setup({
-  settings = {
-    python = {
-      analysis = {
-        inlayHints = {
-          functionParameterTypes = false,
-        },
-      },
-    },
-  },
-})
-
-lspconfig.cssls.setup({})
+vim.lsp.enable("pyrefly")
+vim.lsp.enable("cssls")
 
 ---------------------
 -- LSP keybindings --
