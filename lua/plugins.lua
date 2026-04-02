@@ -2,8 +2,10 @@
 
 -- Use lazy.nvim from https://github.com/folke/lazy.nvim
 
--- Bootstrap lazy.nvim from Github
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazy_lock_path = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json"
+
+-- Bootstrap lazy.nvim from Github
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -300,11 +302,7 @@ local plugins = {
   },
 }
 
--- Options table
-local opts = {
-  rocks = {
-    enabled = false,
-  },
-}
-
-require("lazy").setup(plugins, opts)
+require("lazy").setup({
+  spec = plugins,
+  lockfile = lazy_lock_path,
+})
