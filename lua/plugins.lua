@@ -31,12 +31,7 @@ local plugins = {
     -- Connect Mason with LspConfig
     "williamboman/mason-lspconfig.nvim",
     config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "pyrefly", -- Python LSP and type-checker
-          "r_language_server", -- R
-        },
-      })
+      require("mason-lspconfig").setup({})
     end,
   },
 
@@ -81,16 +76,6 @@ local plugins = {
   -- Nice plugin to view CSV files
   "mechatroner/rainbow_csv",
 
-  -- {
-  --   -- Monokai pro theme
-  --   "loctvl842/monokai-pro.nvim",
-  --   priority = 1000, -- load before other plugins
-  --   config = function()
-  --     require("monokai-pro").setup()
-  --     vim.cmd("colorscheme monokai-pro")
-  --   end,
-  -- },
-
   {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
@@ -113,18 +98,12 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-    },
+    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
     config = function()
       local treesitter = require("nvim-treesitter.configs")
       treesitter.setup({
-        highlight = {
-          enable = true,
-        },
-        indent = {
-          enable = true,
-        },
+        highlight = { enable = true },
+        indent = { enable = true },
         ensure_installed = {
           "haskell",
           "purescript",
@@ -137,7 +116,6 @@ local plugins = {
           "markdown",
           "markdown_inline",
           "gitignore",
-          "r",
         },
         incremental_selection = {
           enable = true,
@@ -148,16 +126,6 @@ local plugins = {
             node_decremental = "<bs>",
           },
         },
-      })
-    end,
-  },
-
-  {
-    -- Treesitter text objects
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    lazy = true,
-    config = function()
-      require("nvim-treesitter.configs").setup({
         textobjects = {
           select = {
             enable = true,
