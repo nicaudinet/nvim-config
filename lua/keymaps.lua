@@ -23,7 +23,6 @@ vim.keymap.set("n", "<Leader>ol", ":e ~/.config/nvim/lua/lsp.lua<CR>", opts)
 -- Open the lazy.nvim menu (leader-open-lazy.nvim)
 vim.keymap.set("n", "<Leader>oL", ":Lazy<CR>", opts)
 
-
 -----------------
 -- Add Keymaps --
 -----------------
@@ -132,10 +131,3 @@ vim.keymap.set("n", "<Leader>ti", ":InspectTree<CR>", opts)
 
 -- Edit query
 vim.keymap.set("n", "<Leader>tq", vim.treesitter.query.edit, opts)
-
---------------
--- Zen Mode --
---------------
-
-zenmode = require("zen-mode")
-vim.keymap.set("n", "<Leader>Z", zenmode.toggle, opts)
