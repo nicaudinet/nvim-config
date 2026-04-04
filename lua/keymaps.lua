@@ -22,8 +22,7 @@ vim.keymap.set("n", "<Leader>oo", ":e ~/.config/nvim/lua/options.lua<CR>", opts)
 vim.keymap.set("n", "<Leader>ol", ":e ~/.config/nvim/lua/lsp.lua<CR>", opts)
 -- Open the lazy.nvim menu (leader-open-lazy.nvim)
 vim.keymap.set("n", "<Leader>oL", ":Lazy<CR>", opts)
--- Open Mason (stands for leader-open-Mason)
-vim.keymap.set("n", "<Leader>oM", ":Mason<CR>", opts)
+
 
 -----------------
 -- Add Keymaps --

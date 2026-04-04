@@ -27,29 +27,6 @@ local plugins = {
   -- LSP config (plugin confings in lsp.lua)
   "neovim/nvim-lspconfig",
 
-  {
-    -- Connect Mason with LspConfig
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup({})
-    end,
-  },
-
-  -- Plugin for installing LSP servers and other tools
-  {
-    "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup({
-        ui = {
-          icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗",
-          },
-        },
-      })
-    end,
-  },
 
   {
     --formatting plugin
