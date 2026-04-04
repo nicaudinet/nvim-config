@@ -182,16 +182,6 @@ local plugins = {
     end,
   },
 
-  {
-    -- LaTeX plugin
-    "lervag/vimtex",
-    lazy = false, -- lazy-loading will disable inverse search
-    config = function()
-      vim.g.vimtex_view_method = "skim"
-      maplocalleader = " "
-    end,
-  },
-
   -- Purescript syntax highlighting
   { "purescript-contrib/purescript-vim" },
 
