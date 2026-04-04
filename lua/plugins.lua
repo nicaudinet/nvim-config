@@ -218,4 +218,5 @@ local plugins = {
 require("lazy").setup({
   spec = plugins,
   lockfile = lazy_lock_path,
+  rocks = { enabled = false },
 })
