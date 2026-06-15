@@ -4,6 +4,7 @@
 
 vim.lsp.enable("pyrefly")
 vim.lsp.enable("cssls")
+vim.lsp.enable("texlab")
 
 ---------------------
 -- LSP keybindings --

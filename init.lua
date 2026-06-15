@@ -4,6 +4,7 @@
 -- Set leader key
 -- Important to run before plugins and keymaps
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- NvimTree: disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1

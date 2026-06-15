@@ -40,6 +40,7 @@ local plugins = {
         formatters_by_ft = {
           python = { "black" },
           lua = { "stylua" },
+          tex = { "tex-fmt" },
         },
         format_on_save = {
           timeout_ms = 2000,
@@ -155,6 +156,17 @@ local plugins = {
           },
         },
       })
+    end,
+  },
+
+  {
+    -- LaTeX plugin
+    "lervag/vimtex",
+    lazy = false, -- lazy-loading will disable inverse search
+    init = function()
+      vim.g.vimtex_view_method = "skim"
+      vim.g.vimtex_compiler_method = "latexmk"
+      vim.g.vimtex_quickfix_mode = 0
     end,
   },
 
