@@ -107,9 +107,11 @@ vim.keymap.set("n", "-", ":Oil --float<CR>", opts)
 -----------
 
 -- Single-shot compilation
-vim.keymap.set("n", "<Leader>ll", ":w<CR>:VimtexCompileSS<CR>", opts)
+vim.keymap.set("n", "<Leader>tl", ":w<CR>:VimtexCompileSS<CR>", opts)
 -- Toggle continuous compilation
-vim.keymap.set("n", "<Leader>ls", ":w<CR>:VimtexCompile<CR>", opts)
+vim.keymap.set("n", "<Leader>ts", ":w<CR>:VimtexCompile<CR>", opts)
+-- Fuzzy citation picker
+vim.keymap.set("n", "<Leader>tc", ":Telescope bibtex<CR>", opts)
 
 --------------------
 -- vim.diagnostic --
@@ -119,15 +121,3 @@ vim.keymap.set("n", "<Leader>ls", ":w<CR>:VimtexCompile<CR>", opts)
 vim.keymap.set("n", "<Leader>gn", vim.diagnostic.goto_next, opts)
 -- Go to next warning / error (leader-goto-previous)
 vim.keymap.set("n", "<Leader>gp", vim.diagnostic.goto_prev, opts)
-
------------------
--- Tree-sitter --
------------------
-
--- Other commands defined in the Tree-sitter plugin options
-
--- Inspect the tree
-vim.keymap.set("n", "<Leader>ti", ":InspectTree<CR>", opts)
-
--- Edit query
-vim.keymap.set("n", "<Leader>tq", vim.treesitter.query.edit, opts)

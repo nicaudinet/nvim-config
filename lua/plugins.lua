@@ -170,6 +170,16 @@ local plugins = {
     end,
   },
 
+  {
+    -- Fuzzy citation picker for .bib files
+    "nvim-telescope/telescope-bibtex.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    ft = "tex",
+    config = function()
+      require("telescope").load_extension("bibtex")
+    end,
+  },
+
   -- Purescript syntax highlighting
   { "purescript-contrib/purescript-vim" },
 
