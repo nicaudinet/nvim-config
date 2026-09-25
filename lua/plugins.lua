@@ -42,10 +42,13 @@ local plugins = {
           lua = { "stylua" },
           tex = { "tex-fmt" },
         },
-        format_on_save = {
-          timeout_ms = 2000,
-          lsp_format = "fallback",
-        },
+        format_on_save = function(bufnr)
+          -- Disable autoformat for LaTeX
+          if vim.bo[bufnr].filetype == "tex" then
+            return
+          end
+          return { timeout_ms = 2000, lsp_format = "fallback" }
+        end,
       })
     end,
   },
