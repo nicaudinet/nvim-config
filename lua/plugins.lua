@@ -38,7 +38,7 @@ local plugins = {
           },
         },
         formatters_by_ft = {
-          python = { "ruff_format" },
+          python = { "ruff_organize_imports", "ruff_format" },
           lua = { "stylua" },
           tex = { "tex-fmt" },
         },
