@@ -113,11 +113,15 @@ vim.keymap.set("n", "-", ":Oil --float<CR>", opts)
 -----------
 
 -- Single-shot compilation
-vim.keymap.set("n", "<Leader>tl", ":w<CR>:VimtexCompileSS<CR>", opts)
+vim.keymap.set("n", "<Leader>tt", ":w<CR>:VimtexCompileSS<CR>", opts)
 -- Toggle continuous compilation
 vim.keymap.set("n", "<Leader>ts", ":w<CR>:VimtexCompile<CR>", opts)
 -- Fuzzy citation picker
 vim.keymap.set("n", "<Leader>tc", ":Telescope bibtex<CR>", opts)
+-- Clean the build
+vim.keymap.set("n", "<Leader>tC", ":VimtexClean<CR>", opts)
+-- Show build errors
+vim.keymap.set("n", "<Leader>te", ":VimtexErrors<CR>", opts)
 
 --------------------
 -- vim.diagnostic --
