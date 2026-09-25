@@ -33,12 +33,12 @@ local plugins = {
     config = function()
       require("conform").setup({
         formatters = {
-          black = {
+          ruff_format = {
             prepend_args = { "--line-length", "80" },
           },
         },
         formatters_by_ft = {
-          python = { "black" },
+          python = { "ruff_format" },
           lua = { "stylua" },
           tex = { "tex-fmt" },
         },

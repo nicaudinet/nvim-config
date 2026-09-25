@@ -6,6 +6,10 @@ vim.lsp.enable("pyrefly")
 vim.lsp.enable("cssls")
 vim.lsp.enable("texlab")
 
+-- Python
+vim.lsp.enable("ty")
+vim.lsp.enable("ruff")
+
 ---------------------
 -- LSP keybindings --
 ---------------------
