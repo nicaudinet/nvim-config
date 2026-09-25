@@ -2,8 +2,13 @@
 -- Enable Language Servers --
 -----------------------------
 
-vim.lsp.enable("pyrefly")
+-- CSS
 vim.lsp.enable("cssls")
+
+-- Lua
+vim.lsp.enable("lua_ls")
+
+-- LaTeX
 vim.lsp.enable("texlab")
 
 -- Python
