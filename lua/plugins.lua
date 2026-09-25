@@ -32,11 +32,6 @@ local plugins = {
     "stevearc/conform.nvim",
     config = function()
       require("conform").setup({
-        formatters = {
-          ruff_format = {
-            prepend_args = { "--line-length", "80" },
-          },
-        },
         formatters_by_ft = {
           python = { "ruff_organize_imports", "ruff_format" },
           lua = { "stylua" },
