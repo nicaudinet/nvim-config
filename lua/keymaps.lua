@@ -73,6 +73,12 @@ vim.keymap.set("n", "<Leader>bo", ":BufOnly<CR>", opts)
 vim.keymap.set("n", "<Leader><Tab>", ":bnext<CR>", opts)
 -- Previous buffer
 vim.keymap.set("n", "<Leader><S-Tab>", ":bprev<CR>", opts)
+-- Copy absolue path of current buffer to clipboard
+vim.keymap.set("n", "<leader>bp", function()
+  local path = vim.api.nvim_buf_get_name(0)
+  vim.fn.setreg("+", path)
+  vim.notify("Copied path: " .. path)
+end, { desc = "Copy current file path" })
 
 ---------------
 -- Telescope --
